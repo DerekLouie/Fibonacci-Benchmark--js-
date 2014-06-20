@@ -6,7 +6,6 @@
 <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
 <link href="fib.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
-<script src="fib.js" type="text/javascript"></script>
 </head>
 <body>
 <div class="centered"> </div>
@@ -14,16 +13,14 @@
     <fieldset>
         <legend>Fibonacci Performance</legend>
         <label>Input Number: </label>
-        <input id="fibnum" type="text" placeholder= "around 30 it gets interesting..">
-        <div class="btn" onclick="timingFunction($('#fibnum')[0].value)">Submit</div>
+        <input id="fibnum" type="text" placeholder= "around 35 it gets interesting..">
+        <div class="btn">Submit</div>
     </fieldset>
 </form>
 
 <div class="fib-results">
     <blockquote>
-        <div class="cache" style="word-break: break-all;"> 
-            <script> if (jQuery.isEmptyObject(thecache)) { document.write("Empty Cache")} else { document.write("Your Cache: "+JSON.stringify(thecache)); } </script> 
-        </div>
+        <div class="cache"></div>
     </blockquote>
     <h1 class="answer"></h1>
     <div>
@@ -37,5 +34,6 @@
         <div class="note"></div>
     </div>
 </div>
+<script src="fib.js" type="text/javascript"></script>
 </body>
 </html>
