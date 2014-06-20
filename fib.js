@@ -12,27 +12,23 @@ function timeFunction(args,cb) {
 }
 
 function renderFibResults() {
+    var target = $('.centered')[0];
     var spinner = new Spinner(opts).spin(target);
-    var target = document.getElementById('centered');
     var n = $('#fibnum')[0].value;
 
-    $(".cache").html("Your Cache: "+JSON.stringify(thecache));
-
-    timeFunction(n,fibwithcache).then(function(val) {
-        $("#wcache").html(val);
-    });
+    if(n > 35) {$(".note").html("* NOTE: As you will soon notice, the order of magnitude a cache improves this by is exponential. I think something like 40 billion calculations <br/> used to calculate the 50th fib number without a cache is brought down to 99 calculations with one, so it is quite an increase in performance!")}
 
     timeFunction(n,fibslow).then(function(val) {
         $("#wocache").html(val);
     });
 
+    timeFunction(n,fibwithcache).then(function(val) {
+        $("#wcache").html(val);
+        $(".answer").html("Answer: "+ thecache[n]);
+        $(".cache").html("Your Cache: "+JSON.stringify(thecache));
+    });
 
-    $(".answer").html("Answer: "+ thecache[n]);
-
-    if(n > 35) {$(".note").html("* NOTE: As you will soon notice, the order of magnitude a cache improves this by is exponential. I think something like 40 billion calculations <br/> used to calculate the 50th fib number without a cache is brought down to 99 calculations with one, so it is quite an increase in performance!")}
-
-    $(".cache").html("Your Cache: "+JSON.stringify(thecache));
-    spinner.stop();
+    setTimeout(function() {spinner.stop();}, 0);
 }
 
 function fibslow(n) {
