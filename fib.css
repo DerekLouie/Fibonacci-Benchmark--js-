@@ -1,6 +1,6 @@
 #fibnum {display: inline-block;}
+#fib-input {margin:10px;}
 .centered {position: absolute; z-index: 9999999999!important; left:50%; top: 50%; width: 10px; height:10px;}
-.fib-input {margin:10px;}
 .btn {margin-bottom: 10px;}
 .fib-results {margin:10px;}
 .cache {word-break: break-all;}
